@@ -35,5 +35,19 @@
     <ProjectReference Include="..\Common.Service\Common.Service.csproj" />
     <ProjectReference Include="..\Silk2WavCommon\Silk2WavCommon.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <None Update="Microsoft.IdentityModel.Clients.ActiveDirectory.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Microsoft.IdentityModel.Clients.ActiveDirectory.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 
 </Project>
