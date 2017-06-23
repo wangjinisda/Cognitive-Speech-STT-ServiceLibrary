@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{A07B5EB6-E848-4116-A8D0-A826331D98C6}") = "SpeechLuisServiceFabric", "SpeechLuisServiceFabric\SpeechLuisServiceFabric.sfproj", "{8FE450E9-1C01-4034-8B18-27ED5698307D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpeechLuisWebApi", "SpeechLuisWebApi\SpeechLuisWebApi.csproj", "{1604A1C2-F5F3-4F11-8137-9ACC994A3C65}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8FE450E9-1C01-4034-8B18-27ED5698307D}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{8FE450E9-1C01-4034-8B18-27ED5698307D}.Debug|x64.ActiveCfg = Debug|x64
+		{8FE450E9-1C01-4034-8B18-27ED5698307D}.Debug|x64.Build.0 = Debug|x64
+		{8FE450E9-1C01-4034-8B18-27ED5698307D}.Debug|x64.Deploy.0 = Debug|x64
+		{8FE450E9-1C01-4034-8B18-27ED5698307D}.Release|Any CPU.ActiveCfg = Release|x64
+		{8FE450E9-1C01-4034-8B18-27ED5698307D}.Release|x64.ActiveCfg = Release|x64
+		{8FE450E9-1C01-4034-8B18-27ED5698307D}.Release|x64.Build.0 = Release|x64
+		{8FE450E9-1C01-4034-8B18-27ED5698307D}.Release|x64.Deploy.0 = Release|x64
+		{1604A1C2-F5F3-4F11-8137-9ACC994A3C65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1604A1C2-F5F3-4F11-8137-9ACC994A3C65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1604A1C2-F5F3-4F11-8137-9ACC994A3C65}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{1604A1C2-F5F3-4F11-8137-9ACC994A3C65}.Debug|x64.Build.0 = Debug|Any CPU
+		{1604A1C2-F5F3-4F11-8137-9ACC994A3C65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1604A1C2-F5F3-4F11-8137-9ACC994A3C65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1604A1C2-F5F3-4F11-8137-9ACC994A3C65}.Release|x64.ActiveCfg = Release|Any CPU
+		{1604A1C2-F5F3-4F11-8137-9ACC994A3C65}.Release|x64.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
