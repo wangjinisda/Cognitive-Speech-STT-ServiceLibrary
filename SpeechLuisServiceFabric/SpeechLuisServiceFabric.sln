@@ -5,7 +5,13 @@ VisualStudioVersion = 15.0.26430.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{A07B5EB6-E848-4116-A8D0-A826331D98C6}") = "SpeechLuisServiceFabric", "SpeechLuisServiceFabric\SpeechLuisServiceFabric.sfproj", "{8FE450E9-1C01-4034-8B18-27ED5698307D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpeechLuisWebApi", "SpeechLuisWebApi\SpeechLuisWebApi.csproj", "{1604A1C2-F5F3-4F11-8137-9ACC994A3C65}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpeechLuisWebApi", "SpeechLuisWebApi\SpeechLuisWebApi.csproj", "{1604A1C2-F5F3-4F11-8137-9ACC994A3C65}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Interface", "Common.Interface\Common.Interface.csproj", "{0766B4A6-AFED-4C0E-A6CC-ED1326449EBB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Service", "Common.Service\Common.Service.csproj", "{AC6AB462-40FB-4AFC-A471-D998AC3A4E14}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk2WavCommon", "Silk2WavCommon\Silk2WavCommon.csproj", "{5918C87E-AF34-4AB5-B4B7-D16423A542C7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +37,30 @@ Global
 		{1604A1C2-F5F3-4F11-8137-9ACC994A3C65}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1604A1C2-F5F3-4F11-8137-9ACC994A3C65}.Release|x64.ActiveCfg = Release|Any CPU
 		{1604A1C2-F5F3-4F11-8137-9ACC994A3C65}.Release|x64.Build.0 = Release|Any CPU
+		{0766B4A6-AFED-4C0E-A6CC-ED1326449EBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0766B4A6-AFED-4C0E-A6CC-ED1326449EBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0766B4A6-AFED-4C0E-A6CC-ED1326449EBB}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{0766B4A6-AFED-4C0E-A6CC-ED1326449EBB}.Debug|x64.Build.0 = Debug|Any CPU
+		{0766B4A6-AFED-4C0E-A6CC-ED1326449EBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0766B4A6-AFED-4C0E-A6CC-ED1326449EBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0766B4A6-AFED-4C0E-A6CC-ED1326449EBB}.Release|x64.ActiveCfg = Release|Any CPU
+		{0766B4A6-AFED-4C0E-A6CC-ED1326449EBB}.Release|x64.Build.0 = Release|Any CPU
+		{AC6AB462-40FB-4AFC-A471-D998AC3A4E14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC6AB462-40FB-4AFC-A471-D998AC3A4E14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC6AB462-40FB-4AFC-A471-D998AC3A4E14}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{AC6AB462-40FB-4AFC-A471-D998AC3A4E14}.Debug|x64.Build.0 = Debug|Any CPU
+		{AC6AB462-40FB-4AFC-A471-D998AC3A4E14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC6AB462-40FB-4AFC-A471-D998AC3A4E14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC6AB462-40FB-4AFC-A471-D998AC3A4E14}.Release|x64.ActiveCfg = Release|Any CPU
+		{AC6AB462-40FB-4AFC-A471-D998AC3A4E14}.Release|x64.Build.0 = Release|Any CPU
+		{5918C87E-AF34-4AB5-B4B7-D16423A542C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5918C87E-AF34-4AB5-B4B7-D16423A542C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5918C87E-AF34-4AB5-B4B7-D16423A542C7}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{5918C87E-AF34-4AB5-B4B7-D16423A542C7}.Debug|x64.Build.0 = Debug|Any CPU
+		{5918C87E-AF34-4AB5-B4B7-D16423A542C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5918C87E-AF34-4AB5-B4B7-D16423A542C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5918C87E-AF34-4AB5-B4B7-D16423A542C7}.Release|x64.ActiveCfg = Release|Any CPU
+		{5918C87E-AF34-4AB5-B4B7-D16423A542C7}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
