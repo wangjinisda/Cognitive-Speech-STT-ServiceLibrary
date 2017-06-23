@@ -1,27 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Text;
-using System.Threading.Tasks;
-using Flurl.Http;
-using SpeechConsole.Static;
 using System.IO;
 
-namespace SpeechConsole.Web
+namespace SpeechLuisOwin.Test.Web
 {
     public class AudioPost
     {
 
         //static string URI = "https://opgwebsilk.chinacloudsites.cn/api/Silk?locale=zh-cn&withIntent=false";
-        //static string URI = "https://opgwebsilk.azurewebsites.net/api/Silk?locale=zh-cn&withIntent=false";
+        static string URI = "https://opgwebsilk.azurewebsites.net/api/Silk?locale=zh-cn&withIntent=false";
         //static string URI = "https://opgwebsilk-opgwebsilkslo.azurewebsites.net/api/Silk?locale=zh-cn&withIntent=false";
-        static string URI = "https://opgwebsilk-opgsilkauth.azurewebsites.net/api/Silk?locale=zh-cn&withIntent=false";
 
-
-        public static string SendAudioFile(Byte[] bytes, int count)
+        public static string SendAudioFile(Byte[] bytes, int count, string token = "")
         {
             string _ContentType = @"audio/wav; codec=""audio/pcm""; samplerate=16000";
             var request = (HttpWebRequest)HttpWebRequest.Create(URI);
@@ -32,6 +22,7 @@ namespace SpeechConsole.Web
             //request.Host = host;
             request.ContentType = _ContentType;
             request.ContentLength = count;
+            request.Headers["Authorization"] = "Bearer " + token;
             using (Stream requestStream = request.GetRequestStream())
             {
                 requestStream.Write(bytes, 0, count);
@@ -61,6 +52,13 @@ namespace SpeechConsole.Web
 
             return responseString;
 
+        }
+
+        public static string SendAudioFile(Byte[] bytes, string url, string token = "")
+        {
+            URI = url;
+            var len = bytes.GetLength(0);
+            return SendAudioFile(bytes, len, token);
         }
     }
 }

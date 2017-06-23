@@ -1,29 +1,33 @@
-﻿using Silk2WavCommon.Exceptions;
+﻿using Common.Interface.IService;
+using Common.Service.Exceptions;
 using Silk2WavCommon.Silk2WavConverter;
 using SpeechWithLuis.Src.Model;
-using SpeechWithLuis.Src.Services;
-using SpeechWithLuis.Src.Static;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Web;
 using System.Web.Http;
 
-namespace SpeechWithLuis.Controllers
+namespace SpeechLuisOwin.Controllers
 {
     public class SilkController : ApiController
     {
-        private SpeechRestService speechRestService = InstanceFactory.SpeechRestService;
+        private ISpeechRestService _speechRestService;
 
-        private LuisService luisService = InstanceFactory.LuisService;
+        private ILuisService _luisService;
 
-        private SpeechService speechService = InstanceFactory.CreateSpeechServiceWithLocale();
+        private ISpeechService _speechService;
+
+
+        public SilkController(ISpeechRestService speechRestService, ILuisService luisService, ISpeechService speechService)
+        {
+            _speechRestService = speechRestService;
+            _luisService = luisService;
+            _speechService = speechService;
+        }
 
         [HttpPost]
-        public async Task<dynamic> Post([FromBody]byte[] audioSource, string locale, bool withIntent = true)
+        public async Task<dynamic> Post([FromBody]byte[] audioSource, string locale = "zh-cn", bool withIntent = true)
         {
             long tsWhenGetAudioText = 0;
             long tsWhenGetAudioIntention = 0;
@@ -34,7 +38,7 @@ namespace SpeechWithLuis.Controllers
                 Stopwatch stopWatch = new Stopwatch();
                 stopWatch.Start();
                 var silk2Wav = new Silk2Wav(audioSource, audioSource.Count<byte>());
-                var outs = speechRestService
+                var outs = _speechRestService
                     .UseLocale(locale)
                     .SendAudio(silk2Wav.WavBytes, silk2Wav.WavBytesLen);
                 var result = outs.results[0];
@@ -51,7 +55,7 @@ namespace SpeechWithLuis.Controllers
                 if (withIntent)
                 {
                     stopWatch.Restart();
-                    intentions = await luisService.GetIntention(lexical);
+                    intentions = await _luisService.GetIntention(lexical);
                     stopWatch.Stop();
                     tsWhenGetAudioIntention = stopWatch.ElapsedMilliseconds;
                 }
