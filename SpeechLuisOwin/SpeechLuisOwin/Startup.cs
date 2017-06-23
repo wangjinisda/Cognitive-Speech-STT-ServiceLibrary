@@ -53,7 +53,7 @@ namespace SpeechLuisOwin
                 });
 
                 collection.AddTransient<AADTokenProvider>();
-                collection.AddSingleton(new Authentication(Configurations.speechSubKey));
+                collection.AddSingleton(new Authentication(Configurations.speechSubKey_HK));
                 collection.AddSingleton<ILuisService, LuisService>();
                 collection.AddSingleton<ISpeechRestService, SpeechRestService>();
                 collection.AddSingleton<ISpeechService, SpeechService>();
