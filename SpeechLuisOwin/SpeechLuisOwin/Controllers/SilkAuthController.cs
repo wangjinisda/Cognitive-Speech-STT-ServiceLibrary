@@ -13,16 +13,18 @@ namespace SpeechLuisOwin.Controllers
     [Authorize]
     public class SilkAuthController : ApiController
     {
-        private ISpeechRestService _speechRestService;
+        private ISpeechServiceWithRabdom _speechServiceWithRabdom;
 
         private ILuisService _luisService ;
 
         private ISpeechService _speechService;
 
 
-        public SilkAuthController(ISpeechRestService speechRestService, ILuisService luisService, ISpeechService speechService)
+
+
+        public SilkAuthController(ISpeechServiceWithRabdom speechServiceWithRabdom, ILuisService luisService, ISpeechService speechService)
         {
-            _speechRestService = speechRestService;
+            _speechServiceWithRabdom = speechServiceWithRabdom;
             _luisService = luisService;
             _speechService = speechService;
         }
@@ -40,9 +42,13 @@ namespace SpeechLuisOwin.Controllers
                 Stopwatch stopWatch = new Stopwatch();
                 stopWatch.Start();
                 var silk2Wav = new Silk2Wav(audioSource, audioSource.Count<byte>());
-                var outs = _speechRestService
+
+                var outs = _speechServiceWithRabdom.WithRandom(service => {
+                    var outss = service
                     .UseLocale(locale)
                     .SendAudio(silk2Wav.WavBytes, silk2Wav.WavBytesLen);
+                    return outss;
+                });
                 var result = outs.results[0];
                 string lexical = result.name;
                 string content = result.lexical;

@@ -12,6 +12,7 @@ using SpeechLuisOwin.Src.Services;
 using SpeechLuisOwin.Src.Static;
 using Common.Service.AuthorizationProvider;
 using Common.Service.Model;
+using Common.Service.Services;
 
 [assembly: OwinStartup(typeof(SpeechLuisOwin.Startup))]
 namespace SpeechLuisOwin
@@ -36,7 +37,7 @@ namespace SpeechLuisOwin
                     return new SpeechModel
                     {
                         Locale = "zh-cn",
-                        SpeechSubKey = Configurations.speechSubKey
+                        SpeechSubKey = Configurations.speechSubKeys[1]
                     };
                 });
 
@@ -53,9 +54,16 @@ namespace SpeechLuisOwin
                 });
 
                 collection.AddTransient<AADTokenProvider>();
-                collection.AddSingleton(new Authentication(Configurations.speechSubKey_HK));
+                // collection.AddSingleton(new Authentication(Configurations.speechSubKey_HK));
+                /*
+                collection.AddSingleton(typeof(ISpeechRestService), provider => {
+                    return new SpeechRestWithBultInAuth(Configurations.speechSubKey_HK);
+                });
+                */
+                collection.AddSingleton(typeof(ISpeechServiceWithRabdom), provider => {
+                    return new SpeechRestWithBultInAuthArray(Configurations.speechSubKeys);
+                });
                 collection.AddSingleton<ILuisService, LuisService>();
-                collection.AddSingleton<ISpeechRestService, SpeechRestService>();
                 collection.AddSingleton<ISpeechService, SpeechService>();
                 return collection;
             });

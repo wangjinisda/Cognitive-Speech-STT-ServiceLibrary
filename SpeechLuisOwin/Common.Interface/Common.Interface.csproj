@@ -76,6 +76,7 @@
     <Compile Include="IService\ILuisService.cs" />
     <Compile Include="IService\ISpeechRestService.cs" />
     <Compile Include="IService\ISpeechService.cs" />
+    <Compile Include="IService\ISpeechServiceWithRabdom.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

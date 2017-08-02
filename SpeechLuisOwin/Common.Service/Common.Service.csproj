@@ -93,6 +93,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\LuisService.cs" />
     <Compile Include="Services\SpeechRestService.cs" />
+    <Compile Include="Services\SpeechRestWithBultInAuth.cs" />
+    <Compile Include="Services\SpeechRestWithBultInAuthArray.cs" />
     <Compile Include="Services\SpeechService.cs" />
   </ItemGroup>
   <ItemGroup>

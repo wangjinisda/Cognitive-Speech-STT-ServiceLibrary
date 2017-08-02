@@ -12,10 +12,6 @@ namespace SpeechLuisOwin.Src.Static
 
         public static string luisSubKey = "1ccb9a5dfc844d21b91f762b7d07e5ef";
 
-        public static string speechSubKey = "1da1bed1e00a46c5a3a953235417381c";
-
-        public static string speechSubKey_HK = "e4d9a06d719749a7a9f7d2623dab2db6";
-
         public static string aad_Tenant = ConfigurationManager.AppSettings["ida:Tenant"];
 
         public static string aad_Audience = ConfigurationManager.AppSettings["ida:Audience"];
@@ -27,5 +23,13 @@ namespace SpeechLuisOwin.Src.Static
         public static string aad_Key = ConfigurationManager.AppSettings["ida:Key"];
 
         public static string aad_Resource = ConfigurationManager.AppSettings["ida:Resource"];
+
+        public static string[] speechSubKeys = {
+            "24ddfaef8980439f9dd90508a3ed3c9f",
+            "3470179be1a141e5ad3e1fbfbedec2f2",
+            "6bc8be66833543f1b506240284b5e537",
+            "ec6f3210532647d48fe2ca4e3b4a2640"
+        };
+
     }
 }
