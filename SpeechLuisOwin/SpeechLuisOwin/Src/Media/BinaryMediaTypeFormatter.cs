@@ -21,7 +21,6 @@ namespace SpeechLuisOwin.Src.Media
             // audio/wav
             SupportedMediaTypes.Add(new MediaTypeHeaderValue("application/octet-stream"));
             SupportedMediaTypes.Add(new MediaTypeHeaderValue("audio/wav"));
-
         }
 
         public override bool CanReadType(Type type)
