@@ -6,22 +6,22 @@ namespace Silk2WavCommon.SilkConverter
 {
     public class SilkDecoder
     {
-        [DllImport(@"\SilkConverter\decoderdll.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(@"\SilkConverter\decoderdll64.dll", CallingConvention = CallingConvention.Cdecl)]
         private unsafe static extern int GetResult(
         int an_int,
         byte** buffer
         );
 
-        [DllImport(@"\SilkConverter\decoderdll.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(@"\SilkConverter\decoderdll64.dll", CallingConvention = CallingConvention.Cdecl)]
         private unsafe static extern void CleanBytePointer(byte *ptr);
 
-        [DllImport(@"\SilkConverter\decoderdll.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(@"\SilkConverter\decoderdll64.dll", CallingConvention = CallingConvention.Cdecl)]
         private unsafe static extern void CleanShortPointer(short* ptr);
 
-        [DllImport(@"\SilkConverter\decoderdll.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(@"\SilkConverter\decoderdll64.dll", CallingConvention = CallingConvention.Cdecl)]
         private unsafe static extern void CleanIntPointer(int* ptr);
 
-        [DllImport(@"\SilkConverter\decoderdll.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport(@"\SilkConverter\decoderdll64.dll", CallingConvention = CallingConvention.Cdecl)]
         private unsafe static extern int SilkDecoderToPcm(
             byte[] jBuffers,
             int size,

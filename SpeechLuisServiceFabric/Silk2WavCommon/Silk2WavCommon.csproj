@@ -53,6 +53,9 @@
     <Content Include="SilkConverter\decoderdll.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="SilkConverter\decoderdll64.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common.Service\Common.Service.csproj">
