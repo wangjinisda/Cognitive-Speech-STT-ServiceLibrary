@@ -11,8 +11,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Src\Ioc\" />
-    <Folder Include="Src\Media\" />
+    <Compile Remove="Src\Ioc\**" />
+    <Compile Remove="Src\Media\**" />
+    <Content Remove="Src\Ioc\**" />
+    <Content Remove="Src\Media\**" />
+    <EmbeddedResource Remove="Src\Ioc\**" />
+    <EmbeddedResource Remove="Src\Media\**" />
+    <None Remove="Src\Ioc\**" />
+    <None Remove="Src\Media\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="wwwroot\" />
   </ItemGroup>
   <ItemGroup>
