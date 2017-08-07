@@ -1,0 +1,53 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net452</TargetFramework>
+    <RuntimeIdentifier>win7-x64</RuntimeIdentifier>
+    <IsServiceFabricServiceProject>True</IsServiceFabricServiceProject>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Src\Ioc\" />
+    <Folder Include="Src\Media\" />
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore" Version="1.0.5" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="1.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Cors" Version="1.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.0.4" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="1.0.2" />
+    <PackageReference Include="Microsoft.ServiceFabric" Version="5.5.216" />
+    <PackageReference Include="Microsoft.ServiceFabric.AspNetCore.WebListener" Version="2.5.216" />
+    <PackageReference Include="Microsoft.ServiceFabric.Data" Version="2.5.216" />
+    <PackageReference Include="Microsoft.ServiceFabric.Services" Version="2.5.216" />
+  </ItemGroup>
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common.Interface\Common.Interface.csproj" />
+    <ProjectReference Include="..\Common.Service\Common.Service.csproj" />
+    <ProjectReference Include="..\Silk2WavCommon\Silk2WavCommon.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Microsoft.IdentityModel.Clients.ActiveDirectory.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Microsoft.IdentityModel.Clients.ActiveDirectory.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
