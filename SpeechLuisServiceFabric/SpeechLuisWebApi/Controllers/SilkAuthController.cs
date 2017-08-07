@@ -10,14 +10,14 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 
 namespace SpeechLuisOwin.Controllers
-{  
+{
     [Authorize]
     [Route("api/[controller]")]
     public class SilkAuthController : Controller
     {
         private ISpeechRestService _speechRestService;
 
-        private ILuisService _luisService ;
+        private ILuisService _luisService;
 
         private ISpeechService _speechService;
 

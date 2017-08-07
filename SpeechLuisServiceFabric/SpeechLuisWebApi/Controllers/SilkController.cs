@@ -34,7 +34,7 @@ namespace SpeechLuisOwin.Controllers
             long tsWhenGetAudioText = 0;
             long tsWhenGetAudioIntention = 0;
             var arrivalTime = DateTime.UtcNow;
-             
+
             try
             {
                 Stopwatch stopWatch = new Stopwatch();
@@ -74,7 +74,7 @@ namespace SpeechLuisOwin.Controllers
                     EndTime = DateTime.UtcNow
                 });
             }
-            catch(BaseException e)
+            catch (BaseException e)
             {
                 return Json(new ResponeModel
                 {
