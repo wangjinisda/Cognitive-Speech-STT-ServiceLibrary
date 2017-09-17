@@ -9,6 +9,7 @@ using Common.Service.AuthorizationProvider;
 using Common.Interface.IService;
 using SpeechLuisOwin.Src.Services;
 using SpeechLuisOwin.Src.Ext;
+using SpeechLuisCore.Src.Formatters;
 
 namespace SpeechLuisWebApi
 {
@@ -64,7 +65,10 @@ namespace SpeechLuisWebApi
             services.AddSingleton<ISpeechService, SpeechService>();
 
             // Add framework services.
-            services.AddMvc();
+            services.AddMvc(options =>
+            {
+                options.InputFormatters.Add(new BinaryFormatter());
+            });
             services.AddCors();
 
         }

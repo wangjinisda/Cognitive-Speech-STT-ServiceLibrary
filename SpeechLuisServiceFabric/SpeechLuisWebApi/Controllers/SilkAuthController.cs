@@ -10,14 +10,14 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 
 namespace SpeechLuisOwin.Controllers
-{  
+{
     [Authorize]
     [Route("api/[controller]")]
     public class SilkAuthController : Controller
     {
         private ISpeechRestService _speechRestService;
 
-        private ILuisService _luisService ;
+        private ILuisService _luisService;
 
         private ISpeechService _speechService;
 
@@ -31,7 +31,7 @@ namespace SpeechLuisOwin.Controllers
 
 
         [HttpPost]
-        public async Task<dynamic> Post([FromBody]byte[] audioSource, [FromQuery]string locale = "zh-cn", [FromQuery]bool withIntent = true)
+        public async Task<JsonResult> Post([FromBody]byte[] audioSource, [FromQuery]string locale = "zh-cn", [FromQuery]bool withIntent = true)
         {
             long tsWhenGetAudioText = 0;
             long tsWhenGetAudioIntention = 0;
@@ -64,7 +64,7 @@ namespace SpeechLuisOwin.Controllers
                     tsWhenGetAudioIntention = stopWatch.ElapsedMilliseconds;
                 }
 
-                return new ResponeModel
+                return Json(new ResponeModel
                 {
                     Text = content,
                     intentions = intentions,
@@ -74,11 +74,11 @@ namespace SpeechLuisOwin.Controllers
                     StatusMessage = "Status OK.",
                     ArrivalTime = arrivalTime,
                     EndTime = DateTime.UtcNow
-                };
+                });
             }
             catch (BaseException e)
             {
-                return new ResponeModel
+                return Json(new ResponeModel
                 {
                     Text = "",
                     intentions = null,
@@ -88,7 +88,7 @@ namespace SpeechLuisOwin.Controllers
                     StatusMessage = e.Message,
                     ArrivalTime = arrivalTime,
                     EndTime = DateTime.UtcNow
-                };
+                });
             }
         }
 

@@ -11,8 +11,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Src\Ioc\" />
-    <Folder Include="Src\Media\" />
+    <Compile Remove="Src\Ioc\**" />
+    <Compile Remove="Src\Media\**" />
+    <Content Remove="Src\Ioc\**" />
+    <Content Remove="Src\Media\**" />
+    <EmbeddedResource Remove="Src\Ioc\**" />
+    <EmbeddedResource Remove="Src\Media\**" />
+    <None Remove="Src\Ioc\**" />
+    <None Remove="Src\Media\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="wwwroot\" />
   </ItemGroup>
   <ItemGroup>
@@ -26,6 +35,7 @@
     <PackageReference Include="Microsoft.ServiceFabric.AspNetCore.WebListener" Version="2.5.216" />
     <PackageReference Include="Microsoft.ServiceFabric.Data" Version="2.5.216" />
     <PackageReference Include="Microsoft.ServiceFabric.Services" Version="2.5.216" />
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
   </ItemGroup>
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.1" />

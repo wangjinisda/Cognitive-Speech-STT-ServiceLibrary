@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using System.Net;
 
 namespace SpeechLuisOwin.Controllers
 {
@@ -28,12 +29,12 @@ namespace SpeechLuisOwin.Controllers
         }
 
         [HttpPost]
-        public async Task<dynamic> Post([FromBody]byte[] audioSource, [FromQuery]string locale = "zh-cn", [FromQuery]bool withIntent = true)
+        public async Task<JsonResult> Post([FromBody]byte[] audioSource, [FromQuery]string locale = "zh-cn", [FromQuery]bool withIntent = true)
         {
             long tsWhenGetAudioText = 0;
             long tsWhenGetAudioIntention = 0;
             var arrivalTime = DateTime.UtcNow;
-             
+
             try
             {
                 Stopwatch stopWatch = new Stopwatch();
@@ -61,7 +62,7 @@ namespace SpeechLuisOwin.Controllers
                     tsWhenGetAudioIntention = stopWatch.ElapsedMilliseconds;
                 }
 
-                return new ResponeModel
+                return Json(new ResponeModel
                 {
                     Text = content,
                     intentions = intentions,
@@ -71,21 +72,21 @@ namespace SpeechLuisOwin.Controllers
                     StatusMessage = "Status OK.",
                     ArrivalTime = arrivalTime,
                     EndTime = DateTime.UtcNow
-                };
+                });
             }
-            catch(BaseException e)
+            catch (BaseException e)
             {
-                return new ResponeModel
+                return Json(new ResponeModel
                 {
                     Text = "",
-                    intentions = null,
+                    intentions = "",
                     GetAudioTextLantency = 0,
                     GetAudioIntentionLantency = 0,
                     StatusCode = e.ErrorCode,
                     StatusMessage = e.Message,
                     ArrivalTime = arrivalTime,
                     EndTime = DateTime.UtcNow
-                };
+                });
             }
         }
 
