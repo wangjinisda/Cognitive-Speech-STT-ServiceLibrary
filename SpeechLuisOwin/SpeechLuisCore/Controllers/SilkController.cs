@@ -28,7 +28,7 @@ namespace SpeechLuisOwin.Controllers
         }
 
         [HttpPost]
-        public async Task<dynamic> Post([FromBody]byte[] audioSource, [FromQuery]string locale = "zh-cn", [FromQuery]bool withIntent = true)
+        public async Task<ResponeModel> Post([FromBody]byte[] audioSource, [FromQuery]string locale = "zh-cn", [FromQuery]bool withIntent = true)
         {
             long tsWhenGetAudioText = 0;
             long tsWhenGetAudioIntention = 0;
