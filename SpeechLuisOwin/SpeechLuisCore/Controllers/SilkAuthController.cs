@@ -69,7 +69,7 @@ namespace SpeechLuisOwin.Controllers
 
                 return new ResponeModel
                 {
-                    Text = content,
+                    Text = result,
                     intentions = intentions,
                     GetAudioTextLantency = tsWhenGetAudioText,
                     GetAudioIntentionLantency = tsWhenGetAudioIntention,
