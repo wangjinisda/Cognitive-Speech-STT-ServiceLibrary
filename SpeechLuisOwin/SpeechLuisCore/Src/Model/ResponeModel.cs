@@ -7,7 +7,7 @@ namespace SpeechWithLuis.Src.Model
 {
     public class ResponeModel
     {
-        public dynamic Text { get; set; }
+        public dynamic ResultContent { get; set; }
 
         public dynamic intentions { get; set; }
 

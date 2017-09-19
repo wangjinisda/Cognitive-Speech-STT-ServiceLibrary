@@ -67,7 +67,7 @@ namespace SpeechLuisOwin.Controllers
 
                 return new ResponeModel
                 {
-                    Text = result,
+                    ResultContent = result,
                     intentions = intentions,
                     GetAudioTextLantency = tsWhenGetAudioText,
                     GetAudioIntentionLantency = tsWhenGetAudioIntention,
@@ -81,7 +81,7 @@ namespace SpeechLuisOwin.Controllers
             {
                 return new ResponeModel
                 {
-                    Text = "",
+                    ResultContent = "",
                     intentions = null,
                     GetAudioTextLantency = 0,
                     GetAudioIntentionLantency = 0,
@@ -99,7 +99,7 @@ namespace SpeechLuisOwin.Controllers
             await Task.Delay(100);
             return new ResponeModel
             {
-                Text = "test",
+                ResultContent = "test",
                 intentions = "test01"
             };
         }
